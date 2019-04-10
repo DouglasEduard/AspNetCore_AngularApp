@@ -66,9 +66,12 @@ namespace EasyDevelopersApp.API.Data
             }
         }
 
-        public Task<bool> UserExistis(string username)
+        public async Task<bool> UserExistis(string username)
         {
-            throw new System.NotImplementedException();
+            if (await _context.Users.AnyAsync(x => x.UserName == username))
+                return true;
+
+            return false;
         }
     }
 }

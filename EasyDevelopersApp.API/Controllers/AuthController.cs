@@ -16,7 +16,8 @@ namespace EasyDevelopersApp.API.Controllers
         {
             _repo = repo;
         }   
-
+        
+        [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
             //validate request
