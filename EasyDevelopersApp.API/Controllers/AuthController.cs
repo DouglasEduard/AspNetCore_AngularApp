@@ -67,7 +67,8 @@ namespace EasyDevelopersApp.API.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddMinutes(20),
+                Expires = DateTime.Now.AddMinutes(10),
+                NotBefore = DateTime.Now,
                 SigningCredentials = creds
             };
 
