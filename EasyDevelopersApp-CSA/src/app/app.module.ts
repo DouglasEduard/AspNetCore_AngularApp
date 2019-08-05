@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,13 +15,20 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvide } from './_services/error.interceptor';
+import { TalentsComponent } from './talents/talents.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { appRoutes } from './routes';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      TalentsComponent,
+      ListsComponent,
+      MessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -29,7 +37,8 @@ import { ErrorInterceptorProvide } from './_services/error.interceptor';
       FormsModule,
       BsDropdownModule.forRoot(),
       TooltipModule.forRoot(),
-      ModalModule.forRoot()      
+      ModalModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
