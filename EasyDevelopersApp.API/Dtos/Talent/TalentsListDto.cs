@@ -1,17 +1,12 @@
 using System;
-using System.Collections.Generic;
 
-namespace EasyDevelopersApp.API.Models
+namespace EasyDevelopersApp.API.Dtos
 {
-    public class User
+    public class TalentsListDto
     {
         public int Id { get; set; }
 
         public string UserName { get; set; }
-
-        public byte[] PasswordHash { get; set; }
-
-        public byte[] PasswordSalt { get; set; }
 
         public string Name { get; set; }
 
@@ -33,8 +28,8 @@ namespace EasyDevelopersApp.API.Models
 
         public DateTime BestTimeToWork { get; set; }
 
-        public double HourlySalaryRequirements { get; set; }
+        public double HourlySalaryRequirements { get; set; }    
 
-        public ICollection<Photo> Photos { get; set; }
+        public string PhotoUrl { get; set; }            
     }
 }

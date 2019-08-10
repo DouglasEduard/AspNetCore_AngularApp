@@ -1,19 +1,18 @@
 using System;
 using System.Collections.Generic;
+using EasyDevelopersApp.API.Models;
 
-namespace EasyDevelopersApp.API.Models
+namespace EasyDevelopersApp.API.Dtos
 {
-    public class User
+    public class TalentDetailDto
     {
-        public int Id { get; set; }
+         public int Id { get; set; }
 
         public string UserName { get; set; }
 
-        public byte[] PasswordHash { get; set; }
-
-        public byte[] PasswordSalt { get; set; }
-
         public string Name { get; set; }
+
+        public int Age { get; set; }
 
         public string Skype { get; set; }
 
@@ -35,6 +34,8 @@ namespace EasyDevelopersApp.API.Models
 
         public double HourlySalaryRequirements { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
+        public string PhotoUrl { get; set; }
+
+        public ICollection<PhotoDetailDto> Photos { get; set; }
     }
 }

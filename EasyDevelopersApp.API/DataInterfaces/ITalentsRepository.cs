@@ -14,6 +14,6 @@ namespace EasyDevelopersApp.API.Data
 
          Task<IEnumerable<User>> GetTalents();
 
-         Task<User> GetUser();
+         Task<User> GetTalent(int id);
     }
 }

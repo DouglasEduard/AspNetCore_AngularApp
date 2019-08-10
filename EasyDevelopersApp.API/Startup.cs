@@ -19,6 +19,7 @@ using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using EasyDevelopersApp.API.Helpers;
+using AutoMapper;
 
 namespace EasyDevelopersApp.API
 {
@@ -37,6 +38,7 @@ namespace EasyDevelopersApp.API
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<ITalentsRepository, TalentsRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
