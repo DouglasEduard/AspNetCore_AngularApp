@@ -17,9 +17,11 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvide } from './_services/error.interceptor';
 import { TalentsComponent } from './talents/talents.component';
-import { ListsComponent } from './lists/lists.component';
+import { SelectedListsComponent } from './talents/lists/selected-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
+import { UserService } from './_services/user.service';
+import { TalentCardComponent } from './talents/talent-card/talent-card.component';
 
 @NgModule({
    declarations: [
@@ -28,8 +30,9 @@ import { appRoutes } from './routes';
       HomeComponent,
       RegisterComponent,
       TalentsComponent,
-      ListsComponent,
-      MessagesComponent
+      SelectedListsComponent,
+      MessagesComponent,
+      TalentCardComponent
    ],
    imports: [
       BrowserModule,
@@ -45,7 +48,8 @@ import { appRoutes } from './routes';
       AuthService,
       ErrorInterceptorProvide,
       AlertifyService,
-      AuthGuard
+      AuthGuard,
+      UserService
    ],
    bootstrap: [
       AppComponent

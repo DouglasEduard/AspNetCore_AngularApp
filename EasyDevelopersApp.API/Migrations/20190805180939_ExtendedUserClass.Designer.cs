@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EasyDevelopersApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190806173126_ExtendedUserClass")]
-    partial class ExtendedUserClass3
+    [Migration("20190805180939_ExtendedUserClass")]
+    partial class ExtendedUserClass2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,13 +33,9 @@ namespace EasyDevelopersApp.API.Migrations
 
                     b.Property<string>("Url");
 
-                    b.Property<int>("UserId");
-
                     b.Property<bool>("isMain");
 
                     b.HasKey("id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Photos");
                 });
@@ -92,14 +88,6 @@ namespace EasyDevelopersApp.API.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Values");
-                });
-
-            modelBuilder.Entity("EasyDevelopersApp.API.Models.Photo", b =>
-                {
-                    b.HasOne("EasyDevelopersApp.API.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
